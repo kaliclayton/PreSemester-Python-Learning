@@ -1,0 +1,77 @@
+#1 Rewrite your pay computation to give the employee 1.5 times the hourly rate for hours worked above 40 hours.
+
+##total_hours= float(input('Enter Hours: '))
+##rate= float(input('Enter Rate: '))
+
+##extra_hours=total_hours-40
+##regular_hours=total_hours-extra_hours
+##overtime_pay=extra_hours*(1.5*rate)
+
+##if total_hours<=40 :
+    ##pay=total_hours*rate
+##else:
+    ##pay=(overtime_pay+(regular_hours*rate))
+##print('Pay:',pay)
+
+#2 Rewrite your pay program using try and except so that your program handles non-numeric input gracefully by printing a message and exiting the program. The following shows two executions of the program:
+    #Enter Hours: 20
+    #Enter Rate: nine
+    #Error, please enter numeric input.
+
+    #Enter Hours: forty
+    #Error, please enter numeric input.
+try:
+    total_hours= float(input('Enter Hours: '))
+    rate= float(input('Enter Rate: '))
+except ValueError:
+    print('Error, please enter numeric input.')
+    exit()
+
+extra_hours=total_hours-40
+regular_hours=total_hours-extra_hours
+overtime_pay=extra_hours*(1.5*rate)
+
+if total_hours<=40 :
+    pay=total_hours*rate
+else:
+    pay=(overtime_pay+(regular_hours*rate))
+print('Pay:',pay)
+
+#3 Write a program to prompt for a score between 0.0 and 1.0. If the score is out of range, print an error message. If the score is between 0.0 and 1.0, print a grade using the following table:
+    # >= 0.9    A
+    # >= 0.8    B
+    # >= 0.7    C
+    # >= 0.6    D
+    #  < 0.6    F
+
+#Enter Score: 0.95
+#A
+
+#Enter Score: perfect
+#Bad score
+
+#Enter Score: 10.0
+#Bad score
+
+#Enter Score: 0.75
+#C
+
+#Enter Score: 0.5
+#F
+
+#Run the program repeatedly as shown above to test the various dsifferent values for input.
+
+score=float(input('Enter score: '))
+if score<1.0 and score>0.0:
+    if score >= 0.9:
+        print('A')
+    elif 0.9> score >=0.8:
+        print('B')
+    elif 0.8> score >=0.7:
+        print('C')
+    elif 0.7> score >=0.6:
+        print('D')
+    elif score<0.6:
+        print('F')
+else:
+    print('Bad Score')
